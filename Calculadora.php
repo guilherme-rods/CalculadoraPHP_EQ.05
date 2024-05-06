@@ -25,6 +25,9 @@
             </form>
         </div>
     </main>
+<?php 
+include 'Funcoes.php';
+?>
     
 </body>
 </html>

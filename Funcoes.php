@@ -8,41 +8,40 @@ if(isset($_POST['calcular'])) {
     switch ($operacao) {
         case 'adicao':
             $resultado = $num01 + $num02;
-            echo $resultado;
+            echo "Resultado:" . $resultado;
             break;
         case 'subtracao':
             $resultado = $num01 - $num02;
-            echo $resultado;
+            echo "Resultado:" . $resultado;
             break;
         case 'multiplicacao':
             $resultado = $num01 * $num02;
-            echo $resultado;
+            echo "Resultado:" . $resultado;
             break;
         case 'divisao':
-            if ($num2 === 0) {
+            if ($num02 === 0) {
                 $resultado = 'Não é possível dividir por zero';
             } else {
-                $resultado = $num1 / $num2;
-                echo $resultado;
+                $resultado = $num01 / $num02;  
             }
+            echo "Resultado:" . $resultado;
             break;
         case 'potencia':
-            $resultado = pow($num1, $num2);
-            echo $resultado;
+            $resultado = pow($num01, $num02);
+            echo "Resultado:" . $resultado;
             break;
         case 'fatoracao':
-            echo fatoracao($num01);
+            echo "Fatorial de $num01 é: " . fatoracao($num01);
             break;
         default:
-            echo "Selecione uma operação válida";
             break;
     }
 }
 
-function fatoracao($num01) {
+function fatoracao($num) {
     $fatores = array();
-    for ($i = 1; $i <= $num01; $i++) {
-        if ($num01 % $i === 0) {
+    for ($i = 1; $i <= $num; $i++) {
+        if ($num % $i === 0) {
             $fatores[] = $i;
         }
     }
