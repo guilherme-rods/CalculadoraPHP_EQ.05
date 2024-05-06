@@ -8,22 +8,27 @@ if(isset($_POST['calcular'])) {
     switch ($operacao) {
         case 'adicao':
             $resultado = $num01 + $num02;
+            echo $resultado;
             break;
         case 'subtracao':
             $resultado = $num01 - $num02;
+            echo $resultado;
             break;
         case 'multiplicacao':
             $resultado = $num01 * $num02;
+            echo $resultado;
             break;
         case 'divisao':
             if ($num2 === 0) {
                 $resultado = 'Não é possível dividir por zero';
             } else {
                 $resultado = $num1 / $num2;
+                echo $resultado;
             }
             break;
         case 'potencia':
             $resultado = pow($num1, $num2);
+            echo $resultado;
             break;
         case 'fatoracao':
             echo fatoracao($num01);
