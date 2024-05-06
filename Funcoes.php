@@ -1,14 +1,18 @@
 <?php 
 
+$resultado = 0;
 if(isset($_POST['calcular'])) {
-    $num01 = isset($_POST['num01']) ? intval($_POST['num01']) : 0;
-    $num02 = isset($_POST['num02']) ? intval($_POST['num02']) : 0;
-    $operacao = isset($_POST['operacao']) ? $_POST['operacao'] : '';
+    $num01 = $_POST['num01'];
+    $num02 = $_POST['num02'] ;
+ 
 
-    switch ($operacao) {
+    switch ($_POST['operacao']) {
         case 'adicao':
             $resultado = $num01 + $num02;
-            echo "Resultado:" . $resultado;
+
+            $_SESSION['resultadoextenso']=  "<br>".$num01." + ". $num02 ." = " .$resultado;
+          
+            echo " <br>Resultado:" . $resultado;
             break;
         case 'subtracao':
             $resultado = $num01 - $num02;
@@ -35,6 +39,24 @@ if(isset($_POST['calcular'])) {
             break;
         default:
             break;
+    }
+}
+if(isset($_POST['salvar'])){
+    $_SESSION['salvar'] = $_SESSION['resultadoextenso'];
+}
+if(isset($_POST['pegarvalores'])){
+echo $_SESSION['salvar'];
+}
+
+if (!isset($_SESSION['count'])) {
+    $_SESSION['count'] = 0;
+}
+if (isset($_POST['M'])) {
+    $_SESSION['count']++;
+    if ($_SESSION['count'] % 2 == 1) {
+        $_SESSION['salvar'] = $_SESSION['resultadoextenso'];
+    } else {
+        echo $_SESSION['salvar'];
     }
 }
 

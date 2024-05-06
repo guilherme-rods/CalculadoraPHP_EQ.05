@@ -1,3 +1,9 @@
+<?php 
+session_start();
+include 'Funcoes.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,8 +16,8 @@
         <div>
             <form action="" method="post">
                 <label for="num01">Número 1:</label>
-                <input type="number" name="num01" placeholder="Digite um número" id="num01">
-                <select id="operacao">
+                <input type="number" name="num01" placeholder="Digite um número" value="<?= $resultado  ?>" id="num01">
+                <select id="operacao" name="operacao">
                     <option value="adicao">+</option>
                     <option value="subtracao">-</option>
                     <option value="multiplicacao">*</option>
@@ -22,11 +28,21 @@
                 <label for="num02">Número 2:</label>
                 <input type="number" name="num02" placeholder="Digite um número" id="num02">
                 <button type="submit" name="calcular">Calcular</button>
+                <button type="submit" name="salvar">salvar</button>
+                <button type="submit" name="pegarvalores">pegarvalores</button>
+                <button type="submit" name="M">M</button>
+                <button type="submit" name="ApagarHistorico">ApagarHistorico</button>
             </form>
         </div>
+        
     </main>
 <?php 
-include 'Funcoes.php';
+echo $_SESSION['historico'].=$_SESSION['resultadoextenso'];
+if(isset($_POST['ApagarHistorico'])){
+    $_SESSION['historico'] = '';
+    $_SESSION['salvar'] = '' ;
+    $_SESSION['resultadoextenso'] = '';
+}
 ?>
     
 </body>
