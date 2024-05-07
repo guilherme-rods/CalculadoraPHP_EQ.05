@@ -1,5 +1,6 @@
 <?php 
 include './Funcoes.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -54,8 +55,9 @@ include './Funcoes.php';
         <div>
             <form action="" method="post">
                 <label for="num01">Número 1:</label>
-                <input type="number" name="num01" placeholder="Digite um número" id="num01">
+                <input type="number" name="num01" placeholder="Digite um número" value="<?=$resultado1[0]?? ''?>" id="num01">
                 <select id="operacao" name="operacao">
+                    <option value="<?=$resultado1[3]?? '' ?>"><?=$resultado1[2]?? '' ?></option>
                     <option value="adicao">+</option>
                     <option value="subtracao">-</option>
                     <option value="multiplicacao">*</option>
@@ -64,7 +66,7 @@ include './Funcoes.php';
                     <option value="fatoracao">n!</option>
                 </select>
                 <label for="num02">Número 2:</label>
-                <input type="number" name="num02" placeholder="Digite um número" id="num02">
+                <input type="number" name="num02" value="<?=$resultado1[1]?? ''?>" id="num02">
                 <button type="submit" name="calcular">Calcular</button>
                 <button type="submit" name="salvar">Salvar</button>
                 <button type="submit" name="pegarvalores">Exibir Salvo</button>
