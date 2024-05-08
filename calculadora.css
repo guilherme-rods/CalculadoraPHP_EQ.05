@@ -67,51 +67,53 @@ button {
     color: #ffffff;
     
 }
-
+#btn-calcular, #btn-salvar, #btn-exibir, #btn-M, #btn-apagar {
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transição suave para transform e cor de fundo */
+}
 
 #btn-calcular {
     background-color: #4CAF50;
-    
 }
 
 #btn-calcular:hover {
     background-color: #45a049;
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }
 
 #btn-salvar {
     background-color: #FF6347;
-    
 }
 
 #btn-salvar:hover {
     background-color: #E5533C;
+    transform: scale(1.1);
 }
 
 #btn-exibir {
     background-color: #FFA500;
-    
 }
 
 #btn-exibir:hover {
     background-color: #E69500;
+    transform: scale(1.1);
 }
 
 #btn-M {
     background-color: #4682B4;
-    
 }
 
 #btn-M:hover {
     background-color: #4178A4;
+    transform: scale(1.1);
 }
 
 #btn-apagar {
     background-color: #800080;
-    
 }
 
 #btn-apagar:hover {
     background-color: #6A006A;
+    transform: scale(1.1);
 }
 
 .history {
