@@ -46,7 +46,11 @@ if (isset($_POST['calcular'])) {
             $resultado = fatoracao($num01);
             $expressao = "Fatorial de $num01 é: $resultado";
             break;
+            default:
+            $op = '+';
+            break;
     }
+    
     $_SESSION['historico'][] = $expressao;
     $_SESSION['expressao'] = [$num01,$num02,$op,$operacao];
 }
